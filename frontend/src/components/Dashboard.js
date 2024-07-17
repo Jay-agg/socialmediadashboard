@@ -1,4 +1,3 @@
-// src/components/Dashboard.js
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import UserDetails from "./UserDetails";
@@ -30,14 +29,20 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">
-        Social Media Analytics Dashboard
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {user && <UserDetails user={user} />}
-        {posts.length > 0 && <PostAnalytics posts={posts} />}
-        {ads.length > 0 && <AdAnalytics ads={ads} />}
+    <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-3xl font-bold text-center text-indigo-600 mb-8">
+          Social Media Analytics Dashboard
+        </h1>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-1">
+            {user && <UserDetails user={user} />}
+          </div>
+          <div className="lg:col-span-2 space-y-8">
+            {posts.length > 0 && <PostAnalytics posts={posts} />}
+            {ads.length > 0 && <AdAnalytics ads={ads} />}
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -14,11 +14,11 @@ const AdAnalytics = ({ ads }) => {
     value: ad.reach,
   }));
 
-  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#8884D8"];
 
   return (
-    <div className="bg-white shadow rounded-lg p-6">
-      <h2 className="text-2xl font-semibold mb-4">Ad Analytics</h2>
+    <div className="bg-white shadow-lg rounded-lg p-6">
+      <h2 className="text-2xl font-bold mb-4 text-indigo-600">Ad Analytics</h2>
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>
           <Pie

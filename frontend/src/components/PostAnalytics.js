@@ -20,13 +20,19 @@ const PostAnalytics = ({ posts }) => {
   }));
 
   return (
-    <div className="bg-white shadow rounded-lg p-6">
-      <h2 className="text-2xl font-semibold mb-4">Post Analytics</h2>
+    <div className="bg-white shadow-lg rounded-lg p-6">
+      <h2 className="text-2xl font-bold mb-4 text-indigo-600">
+        Post Analytics
+      </h2>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="content" />
-          <YAxis />
+          <XAxis
+            dataKey="content"
+            interval="preserveStartEnd"
+            tick={{ fontSize: 12 }}
+          />
+          <YAxis allowDecimals={false} tick={{ fontSize: 12 }} />
           <Tooltip />
           <Legend />
           <Bar dataKey="likes" fill="#8884d8" />
